@@ -278,7 +278,6 @@ Module.register("MMM-Touch", {
   startIdleTimeout: function() {
     if (this.config.onIdle && this.config.threshold.idle_ms > 0) {
       this.idleTimer = setTimeout(() => {
-	console.log(this)
         if (typeof this.config.onIdle == "string") this.sendNotification(this.config.onIdle)
         if (typeof this.config.onIdle == "function") this.config.onIdle(this)
       }, this.config.threshold.idle_ms)
